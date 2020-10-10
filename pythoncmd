@@ -1,0 +1,65 @@
+python install
+=============
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.6
+
+alias python=python3
+
+
+
+virtual env
+============
+sudo apt install python3-venv
+python3 -m venv tapas-env
+
+activate vitual env
+===================
+source tapas-env/bin/activate
+
+git
+=====
+sudo apt install git
+
+pip install ipython
+pip install Flask
+
+update pip
+==========
+pip install --upgrade pip
+
+fatal error: Python.h: No such file or directory
+================================================
+sudo apt-get install python3-dev
+
+
+gsutil
+=======
+pip install gsutil
+sudo apt-get install -y unzip
+
+run flask
+============
+export FLASK_APP=application.py
+flask run
+
+
+
+run tapas code
+=============
+git clone https://github.com/shan861/tapas-flask-api.git
+gsutil cp gs://tapas_models/2020_04_21/tapas_sqa_base.zip . && unzip tapas_sqa_base.zip
+
+
+
+
+install packagde from requirement.txt
+=====================================
+pip install -r requirements.txt
+
+
+
+
+
