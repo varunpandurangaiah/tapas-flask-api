@@ -14,7 +14,7 @@ print("Libraries Initialised!")
 
 tf.get_logger().setLevel('ERROR')
 
-from .tapas.utils import tf_example_utils
+from tapas.utils import tf_example_utils
 from tapas.protos import interaction_pb2
 from tapas.utils import number_annotation_utils
 from tapas.scripts import prediction_utils
