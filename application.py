@@ -227,6 +227,31 @@ def tapasAsk():
     output = json.dumps(result, default=set_default)
     return output
 
+@app.route('/users')
+def usersdata():
+    q=request.args['q']
+    result = predict_single_question("""
+    id|userName|name|surname|email|emailConfirmed|phoneNumber|status|createdOn|updatedOn
+    57fc1de4-b7cc-4a42-9ddf-39f681e9c66c|Rahul.Ramesh@gds.ey.com|Rahul|R|Rahul.Ramesh@gds.ey.com|FALSE|46453600000000|APPROVED|2020-07-21T04:58:39.6163387|2020-10-09T09:08:33.004867
+    edf13035-8493-e8a3-226d-39f6647fa327|Pratima.Behera@gds.ey.com|Pratima|Behera|Pratima.Behera@gds.ey.com|FALSE|9448039770|APPROVED|2020-07-15T11:53:44.5063382|2020-10-09T09:07:56.4323248
+    c267b865-e1b5-cc12-4f6b-39f663e026ce|Amina.Thaha1@gds.ey.com|Amina|M Thaha1|Amina.Thaha1@gds.ey.com|FALSE|919996000000|APPROVED|2020-07-15T08:59:32.5754108|2020-10-09T05:33:50.6272115
+    0f12620f-859d-651b-2414-39f7f564389d|Vani.Mohan@gds.ey.com|Vani|Mohan|Vani.Mohan@gds.ey.com|FALSE|919886000000|APPROVED|2020-10-01T08:11:31.3644562|2020-10-06T12:55:42.1155515
+    c8cc74a5-6f98-e54f-c63d-39f6ca3bb659|Rashmi.Sachin@gds.ey.com|Rashmi|Sachin|Rashmi.Sachin@gds.ey.com|FALSE||APPROVED|2020-08-04T06:00:48.9870037|2020-10-06T06:12:00.4539584
+    e4ead65b-a6dc-14ec-0fb3-39f7f585ca54|Karthika.LR@gds.ey.com|Karthika|Lr|Karthika.LR@gds.ey.com|FALSE|918589000000|APPROVED|2020-10-01T08:48:11.385674|2020-10-01T08:48:19.6155881
+    c0108f6c-b903-a2eb-ced1-39f7f583c065|Trung.D.Cao@de.ey.com|Trung Duc|Cao|Trung.D.Cao@de.ey.com|FALSE|4916090000000|REVOKED|2020-10-01T08:45:57.7377365|2020-10-01T08:47:40.7448312
+    6c10bb22-6921-5589-f61e-39f7f57d8cd4|Anil.S@gds.ey.com|Anil|S|Anil.S@gds.ey.com|FALSE|919568000000|APPROVED|2020-10-01T08:39:11.3223006|2020-10-01T08:39:24.4761895
+    c04d1ec5-2bef-1409-514a-39f7f55f66e9|Akshada.Nayak@de.ey.com|Akshada|Nayak|Akshada.Nayak@de.ey.com|FALSE|4916090000000|REVOKED|2020-10-01T08:06:15.539297|2020-10-01T08:12:03.1381272
+    f4b4ce02-c22d-ad00-e799-39f7f56231b1|martin.rothenhaeusler@de.ey.com|Martin|Rothenh„usler|martin.rothenhaeusler@de.ey.com|FALSE|4916090000000|REVOKED|2020-10-01T08:09:18.5216095|2020-10-01T08:11:58.2485097
+    20aa420c-87b7-49c8-4e7b-39f7f5475684|Jenny.W.Le@de.ey.com|Jenny|Le|Jenny.W.Le@de.ey.com|FALSE|4916090000000|APPROVED|2020-10-01T07:39:58.4782203|2020-10-01T07:40:07.3163481
+    4117d8d4-9f76-67ca-90bf-39f66484bd11|Diana.Francis@gds.ey.com|Diana|Francis|Diana.Francis@gds.ey.com|FALSE|75765675756|APPROVED|2020-07-15T11:59:18.8223446|2020-09-24T06:21:21.8345063
+
+    """, [q])
+   
+    print(q)
+    output = json.dumps(result, default=set_default)
+    return output
+
+
 
 if __name__=='__main__':
     app.run() 
